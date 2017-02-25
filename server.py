@@ -19,7 +19,7 @@ port = int(os.getenv('VCAP_APP_PORT', 8000))
 
 auth_url = 'https://identity.open.softlayer.com'+'/v3'
 project_name = 'object_storage_5396a43e_8512_4746_b024_bfa34c5fd2b3'
-password = 'zj9LjtHrr.h4LvY['
+password = '#######'
 user_domain_name = '1029823'
 project_id = 'a8f8e7ecef8f4c2d93eddd11fc659c58'
 user_id ='dbc578008b8c46ba89edb3ba13fd6269'
@@ -192,30 +192,6 @@ def downfile(filename):
 def readfile():
     return render_template("readfile.html")
 
-
-''''@app.route('/reallyrf',methods=['GET','POST'])
-def reallyrf():
-    rfname = request.form['fn']
-    print rfname
-    #return "File name is "+rfname
-    downloadedfile = rfname
-    gpg = gnupg.GPG(gnupghome='/gnupg')
-    #gpg = gnupg.GPG(gnupghome='C:/Program Files (x86)/GNU/GnuPG')
-    d_file = conn.get_object(container_name, rfname)
-    file = open(tmp, 'w')
-    file.write(d_file[1])
-    file.close()
-    file = open(tmp, 'r')
-    dcontents = file.read()
-    decrypted_data = gpg.decrypt(dcontents, passphrase='asdf')
-    file = open(downloadedfile, 'w')
-    file.write(str(decrypted_data))
-    file.close()
-    readdata=open(downloadedfile,'r')
-    tmpd=readdata.readline()
-    return " File has been downloaded successfully <br><br>Data is "+tmpd+"<br><a href='/'>go back to home</a>"
-'''
-
 @app.route('/date',methods=['GET','POST'])
 def getdate():
     return render_template("date.html")
@@ -260,10 +236,6 @@ def img():
     encimg=k.encrypt(img)
     print len(encimg)/1024
     conn.put_object(container_name, obj.filename, contents=encimg)
-    '''with open(obj.filename,'wb') as t:
-        t.write(encimg)'''
-
-
     return "IMAGE ENCRYPTED AND UPLOADED SUCCESSFULLY"
 
 
