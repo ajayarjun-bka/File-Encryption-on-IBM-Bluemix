@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Python Starter Application</title>
+	 <script src="/static/jquery-1.12.4.js"></script>
+</head>
+<body>
+<h1>List of Files</h1>
+{% for item in filelist %}
+<li>{{item['name']}} size: {{item['bytes']}} Date: {{item['last_modified']}}</li>
+
+{% endfor %}
+<h1> Total File Size on BLuemix is {{totsize}} Bytes</h1>
+<br><br>
+<a href='/'>go back to home</a>
+</body>
+</html>

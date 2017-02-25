@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Python Starter Application</title>
+	 <script src="/static/jquery-1.12.4.js"></script>
+
+</head>
+<body>
+<h1>In Upload File</h1>
+	<form action="/processimg"  method="POST" enctype="multipart/form-data" >
+    <label>Select the file to Upload</label>
+	<input type="file"  name="fileupload"/>
+    <input href="/processimg"  type="submit" name="Upload">
+</form>
+
+</body>
+</html>
